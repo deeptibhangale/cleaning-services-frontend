@@ -3,7 +3,7 @@ import { useState } from "react";
 export default function Clients() {
   const [data, setData] = useState([]);
   function handleClick() {
-    fetch("http://localhost:8080/workers", {
+    fetch("http://localhost:8080/clients", {
       method: "GET",
     })
       .then((response) => response.json())
@@ -23,7 +23,8 @@ export default function Clients() {
             <tr>
               <th>Id </th>
               <th>Name </th>
-              <th>Title </th>
+              <th>Contact </th>
+              <th>Email </th>
             </tr>
           </thead>
           <tbody>
@@ -31,7 +32,8 @@ export default function Clients() {
               <tr key={item.id}>
                 <td>{item.id}</td>
                 <td>{item.name}</td>
-                <td>{item.title}</td>
+                <td>{item.contactNum}</td>
+                <td>{item.email}</td>
               </tr>
             ))}
           </tbody>
